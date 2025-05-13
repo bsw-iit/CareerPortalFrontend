@@ -14,8 +14,8 @@ useEffect(() => {
         });
     }, []);
     return (
-        <div className="w-full h-auto overflow-hidden pt-[6vh] pb-[6vh]" id="explore">
-            <div className="w-full px-4  md:px-16 flex-col lg:flex-row flex justify-evenly items-center h-full ">
+        <div className="w-full py-12 px-4 md:px-16" id="explore">
+            <div className="w-full px-4 md:px-16 flex flex-col lg:flex-row justify-evenly items-center h-full md:gap-8">
                 <div
                     id="carousel-box"
                     className="flex flex-col justify-center items-center gap-4"
@@ -34,7 +34,7 @@ useEffect(() => {
                         </button>
                         <div
                             id="carousel"
-                            className="md:w-[500px] w-screen bg-black overflow-hidden"
+                            className="md:w-[500px] w-screen bg-black overflow-hidden rounded-md"
                             style={{
                                 display: "flex",
                                 justifyContent: "center",
@@ -54,12 +54,7 @@ useEffect(() => {
                                         ].cover_image
                                     }
                                     alt="Image"
-                                    className="max-w-full max-h-full"
-                                    style={{
-                                        display: "block",
-                                        height: "auto",
-                                        width: "auto",
-                                    }}
+                                    className="w-full h-auto object-contain"
                                 />
                             </Link>
                         </div>

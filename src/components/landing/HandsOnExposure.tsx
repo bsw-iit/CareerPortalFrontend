@@ -2,15 +2,15 @@ import yosemiteValleyImage from '../../assets/landing/yosemite-valley.png';
 import { Link } from "react-router-dom";
 const HandsOnExposure = () => {  
     return (   
-        <div className="bg-[#0E2F3F] w-full flex p-10 relative h-[160%]">  
-            <div className="flex w-[50vw] flex-col my-auto gap-4 px-10 text-white">  
-                <h4 className="text-[20px] font-inter font-bold text-[#7CD2FC]">Bag your dream internship</h4>  
-                <h3 className="text-[40px] font-bold tracking-wide leading-[1.1]">BUILD PROFILE</h3>  
-                <p className="text-[22px] font-montserrat  leading-[1.5] max-w-3xl">
+        <div className="bg-[#0E2F3F] w-full flex p-10 relative">  
+            <div className="flex w-full md:w-1/2 flex-col my-auto gap-4 md:px-10 text-white">  
+                <h4 className="text-lg font-inter font-bold text-[#7CD2FC]">Bag your dream internship</h4>  
+                <h3 className="text-3xl md:text-4xl font-bold tracking-wide leading-tight">BUILD PROFILE</h3>  
+                <p className="text-base md:text-lg font-montserrat leading-relaxed max-w-3xl">
                     FAQs, CV making guides and tips to get started, from <br />
                     seniors at the top of their fields.
                 </p>  
-                <div className="flex gap-x-4 my-1"> {/* Adjusted gap between buttons using gap-x */}  
+                <div className="flex flex-wrap gap-3 my-2"> {/* Adjusted gap between buttons using gap-x */}  
                 <button className="border-white border-2 bg-transparent text-white py-1 px-3 rounded-lg hover:bg-white hover:text-[#0E2F3F]">
                         <Link to="../BUILD/core">Core</Link>
                     </button>
@@ -37,102 +37,11 @@ const HandsOnExposure = () => {
                 </div>
             </div>  
             <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
+                className="absolute bottom-0 right-0 w-full md:w-1/2 h-64 md:h-full object-cover opacity-30 md:opacity-100 pointer-events-none z-0"
                 src={yosemiteValleyImage}  
                 alt="Yosemite Valley"   
             />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0 opacity-60"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-
-            <img  
-                className="w-[40vw] h-[50vh] object-cover absolute bottom-0 right-0"  
-                src={yosemiteValleyImage}  
-                alt="Yosemite Valley"   
-            />  
-        </div>  
+        </div> 
     );  
 }  
 
