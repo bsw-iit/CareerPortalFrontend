@@ -287,7 +287,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#EDEDED] text-center shadow-md rounded-lg p-4">
+        <div className="md:hidden bg-[#EDEDED] text-center shadow-md p-4 rounded-b-lg">
           <div className="flex flex-col gap-4">
             <span
               onClick={toggleMobileExplore}
