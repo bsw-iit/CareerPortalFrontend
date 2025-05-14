@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import ExplorePage from "./pages/Explore";
 import BuildPage from "./pages/BUILD"; // Placeholder for build pages
 import ResourcePage from "./pages/Resource"; 
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         {/* Build Folder Pages */}
         <Route path="/build/:profileName" element={<BuildPage />} />
         <Route path="/Resource/:profileName" element={<ResourcePage />} />
+        <Route path="*" element={<NotFound/>}/>
         
       </Routes>
     </Router>
