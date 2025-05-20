@@ -1,32 +1,53 @@
 import React, {useState, useEffect} from "react";  
 import ReactPlayer from "react-player";
-
 import profileData from "../../assets/profiles.json";
+import timeData from "../../assets/TimelineProfile.json"
+import Timeline, { timePointType } from "./Timeline";
 
 const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {  
-    const profile = profileData[profileName as keyof typeof profileData];
-    const [hoveredQuestion, setHoveredQuestion] = useState<string | null>(null);
-    const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-    const [questionClicked, setQuestionClicked] = useState<boolean>(false); // Track if a question was clicked
+  
+  //get the profile Data
+  const profile = profileData[profileName as keyof typeof profileData];
+  const timePoint = timeData[profileName as keyof typeof timeData];
 
-    const [playerKey, setPlayerKey] = useState<number>(0);
-    const [playingURL, setPlayingURL] = useState<string>(
-      profile?.videoLinks?.[0] || ""
+  const [hoveredQuestion, setHoveredQuestion] = useState<string | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  
+  // Track if a question was clicked
+  const [questionClicked, setQuestionClicked] = useState<boolean> 
+  (false); 
+
+  const [playerKey, setPlayerKey] = useState<number>(0);
+  const [playingURL, setPlayingURL] = useState<string>(
+    profile?.videoLinks?.[0] || ""
   );
-  const playerRef = React.useRef<ReactPlayer | null>(null);  // Create a reference for ReactPlayer
 
-    const curveHeight = 300;  
-    const middle = 150;  
-    const amplitude = 25;
-    const startX = -1.1*Math.PI; 
-    const endX = 6.5 * Math.PI; 
+  // Create a reference for ReactPlayer
+  const playerRef = React.useRef<ReactPlayer | null>(null);  
 
-    const downwardArrowPositions = [-Math.PI / 2, (3 * Math.PI) / 2, (7 * Math.PI) / 2, (11 * Math.PI) / 2];  
-    const upwardArrowPositions = [Math.PI / 2, (5 * Math.PI) / 2, (9 * Math.PI) / 2];  
 
-    const mapToPercentage = (x: number): number => ((x - startX) / (endX - startX)) * 100;
 
-    const calculateY = (x: number): number => middle - amplitude * Math.sin(x);
+
+
+
+  //***********************Time line Logic********************************//
+    // const curveHeight = 300;  
+    // const middle = 150;  
+    // const amplitude = 25;
+    // const startX = -1.1*Math.PI; 
+    // const endX = 6.5 * Math.PI; 
+
+    // const downwardArrowPositions = [-Math.PI / 2, (3 * Math.PI) / 2, (7 * Math.PI) / 2, (11 * Math.PI) / 2];  
+    // const upwardArrowPositions = [Math.PI / 2, (5 * Math.PI) / 2, (9 * Math.PI) / 2];  
+
+    // const mapToPercentage = (x: number): number => ((x - startX) / (endX - startX)) * 100;
+
+    // const calculateY = (x: number): number => middle - amplitude * Math.sin(x);
+    //***********************Time line Logic*********************************************//
+
+
+
+    //FAQs section 
     const formatTooltipText = (text: string) =>
       text.split("!!").map((line, index) => (
         <React.Fragment key={index}>
@@ -34,6 +55,7 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
           {index < text.split("!!").length - 1 && <br />}
         </React.Fragment>
       ));
+
     const handleMouseEnter = (index: number, event: React.MouseEvent) => {
       setHoveredQuestion(profile?.questions?.[index] || "");
       
@@ -45,9 +67,11 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
         y: rect.top - 10, // Position above the cursor (20px offset)
       });
     };
+
     const handleMouseLeave = () => {
       setHoveredQuestion(null); // Clear hovered question text
-    };    
+    };   
+
     const handleQuestionClick = (iddd: number, event: React.MouseEvent) => {
       event.preventDefault();
       const timestamp = parseFloat(profile.timestamps[iddd]);  // Get timestamp in seconds
@@ -76,36 +100,37 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
     setPlayerKey(prevKey => prevKey + 1);
     setPlayingURL(profile?.videoLinks?.[0] || "");
 }, [profileName]);
-    const arrows = [  
-        ...downwardArrowPositions.map((x, index) => ({  
-            positionX: `${mapToPercentage(x)}%`,  
-            positionY: calculateY(x)+70,  
-            direction: "down" as "down",  
-            label: profile?.downwardLabels?.[index] || `Down ${index + 1}`,  
-        })).filter(arrow => arrow.label.trim() !== ""), // Filter out blank labels
-        ...upwardArrowPositions.map((x, index) => ({  
-            positionX: `${mapToPercentage(x)}%`,  
-            positionY: amplitude+5, // Starting from the top of the sine curve  
-            direction: "up" as "up",  
-            label: profile?.upwardLabels?.[index] || `Up ${index + 1}`,  
-        })).filter(arrow => arrow.label.trim() !== ""), // Filter out blank labels  
-    ];  
-    
-    
-      
-      
+
+
+    //***********************Timeline Logic********************************//
+    // const arrows = [  
+    //     ...downwardArrowPositions.map((x, index) => ({  
+    //         positionX: `${mapToPercentage(x)}%`,  
+    //         positionY: calculateY(x)+70,  
+    //         direction: "down" as "down",  
+    //         label: profile?.downwardLabels?.[index] || `Down ${index + 1}`,  
+    //     })).filter(arrow => arrow.label.trim() !== ""), // Filter out blank labels
+    //     ...upwardArrowPositions.map((x, index) => ({  
+    //         positionX: `${mapToPercentage(x)}%`,  
+    //         positionY: amplitude+5, // Starting from the top of the sine curve  
+    //         direction: "up" as "up",  
+    //         label: profile?.upwardLabels?.[index] || `Up ${index + 1}`,  
+    //     })).filter(arrow => arrow.label.trim() !== ""), // Filter out blank labels  
+    // ];  
+      //***********************Timeline Logic*******************************//
 
     return (  
-      
+
+      //Main Container
         <div className="w-full min-h-screen bg-[#FFFFFF] flex flex-col items-center">  
             <div className="flex-grow" >  
-               
+
                 <div className="w-full py-2 flex flex-col items-center relative">  
                     <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 mt-0" style={{ fontFamily: "Cormorant infant, serif", color: "#002F40", fontWeight: 750 ,position : "relative", left : "-2.5vw" }}>Suggested Timeline</h1>  
 
-                   
-                    <div className="relative w-full min-h-[400px]">  
-                         
+  {/**********************************************Time line Logic**************************** */}
+                    {/* <div className="relative w-full min-h-[400px]">  
+                        
                         <svg  
                             className="absolute w-full h-full"  
                             xmlns="http://www.w3.org/2000/svg"  
@@ -135,10 +160,15 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
                                 label={arrow.label}  
                             />  
                         ))}  
-                    </div>  
-                </div>  
+                    </div>   */}
 
-                 
+{/**********************************************Time line Logic**************************** */}
+
+                    <div className="w-full p-10">
+                      <Timeline profileData={timePoint?timePoint:[]}/>
+                    </div>
+                </div>  
+                
                 <div className="flex flex-col md:flex-row w-full bg-[#FFFFFF] mt-12">
                 
                 < div className="w-full md:w-1/2  bg-[#002F40] flex items-center justify-center relative" style={{ padding: '4vh', aspectRatio: '1.7' }}>
@@ -216,11 +246,11 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Drop shadow effect
     }}
   >
-     {formatTooltipText(hoveredQuestion)}
+    {formatTooltipText(hoveredQuestion)}
   </div>
 )}
 
-                    </div>
+</div>
 </div>
 
 <div className="flex flex-col-reverse md:flex-row w-full">
@@ -246,7 +276,7 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
 </div>
 
 < div className="w-full md:w-1/2  bg-[#002F40] flex items-center justify-center relative" style={{ padding: '4vh', aspectRatio: '1.7' }}>
- 
+
     <ReactPlayer
     url={profile?.videoLinks?.[1] || ""} // Access videoLinks[1] for embedded YouTube link
     className="react-player"
@@ -255,12 +285,12 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
     controls
     // Automatically play the video when the component renders
   />
-       
+      
     </div>
 </div>
- 
 
-                 
+
+                
 <div className="w-full bg-[#FFFFFF] p-8">
 {profile?.guide?.html && (
         <div
@@ -273,77 +303,77 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
     );  
 };  
 
+//**********************************************Time line Logic**************************** *//
+// interface ArrowProps {
+//   x: string; // X position as a percentage string
+//   y: number; // Y position as a number
+//   direction: "up" | "down"; // Direction can be either "up" or "down"
+//   label: string; // Label for the arrow
+// }
 
-interface ArrowProps {
-  x: string; // X position as a percentage string
-  y: number; // Y position as a number
-  direction: "up" | "down"; // Direction can be either "up" or "down"
-  label: string; // Label for the arrow
-}
-
-const Arrow: React.FC<ArrowProps> = ({ x, y, direction, label }) => {
-    const arrowLength = 40;
+// const Arrow: React.FC<ArrowProps> = ({ x, y, direction, label }) => {
+//     const arrowLength = 40;
   
-    // Split label into heading and body
-    const splitLabel = label.split(/\s{4}/); // Split at the first sentence ending
-    const heading = splitLabel[0]; // First part is the heading
-    const body = splitLabel.slice(1).join(" "); // Remaining text is the body
+//     // Split label into heading and body
+//     const splitLabel = label.split(/\s{4}/); // Split at the first sentence ending
+//     const heading = splitLabel[0]; // First part is the heading
+//     const body = splitLabel.slice(1).join(" "); // Remaining text is the body
   
-    // Function to format body text with breaks only on "!!"
-    const formatBodyText = (text: string) =>
-      text.split("!!").map((line, index) => (
-        <React.Fragment key={index}>
-          <span style={{ whiteSpace: "nowrap" }}>{line.trim()}</span>
-          {index < text.split("!!").length - 1 && <br />}
-        </React.Fragment>
-      ));
+//     // Function to format body text with breaks only on "!!"
+//     const formatBodyText = (text: string) =>
+//       text.split("!!").map((line, index) => (
+//         <React.Fragment key={index}>
+//           <span style={{ whiteSpace: "nowrap" }}>{line.trim()}</span>
+//           {index < text.split("!!").length - 1 && <br />}
+//         </React.Fragment>
+//       ));
   
-    return (
-      <div
-        className="absolute flex flex-col items-center"
-        style={{
-          left: x,
-          top: `${y}px`,
-          transform: "translate(-50%, 0)",
-          fontFamily: "Montserrat, sans-serif",
+//     return (
+//       <div
+//         className="absolute flex flex-col items-center"
+//         style={{
+//           left: x,
+//           top: `${y}px`,
+//           transform: "translate(-50%, 0)",
+//           fontFamily: "Montserrat, sans-serif",
           
-        }}
-      >
-        {direction === "down" ? (
-          <>
-            <div
-              className="w-[2px] bg-[#002F40]"
-              style={{ height: `${arrowLength}px` }}
-            ></div>
-            <div className="w-3 h-3 bg-[#002F40] rounded-full"></div>
-            <div
-              className="text-sm mt-2 text-[#000000] font-semibold text-center max-w-xs"
-              style={{ textAlign: "center" }}
-            >
-              <span style={{ fontWeight: 700 }}>{heading}</span>
-              <p style={{ fontWeight: 5} }>{formatBodyText(body)}</p>
-            </div>
-          </>
-        ) : (
-          <>
-            <div
-              className="text-sm mb-2 text-[#000000] font-semibold text-center max-w-xs"
-              style={{ textAlign: "center" }}
-            >
-              <span style={{ fontWeight: 700 }}>{heading}</span>
-              <p style={{ fontWeight: 50 }}>{formatBodyText(body)}</p>
-            </div>
-            <div className="w-3 h-3 bg-[#002F40] rounded-full"></div>
-            <div
-              className="w-[2px] bg-[#002F40]"
-              style={{ height: `${arrowLength}px` }}
-            ></div>
-          </>
-        )}
-      </div>
-    );
-  };
+//         }}
+//       >
+//         {direction === "down" ? (
+//           <>
+//             <div
+//               className="w-[2px] bg-[#002F40]"
+//               style={{ height: `${arrowLength}px` }}
+//             ></div>
+//             <div className="w-3 h-3 bg-[#002F40] rounded-full"></div>
+//             <div
+//               className="text-sm mt-2 text-[#000000] font-semibold text-center max-w-xs"
+//               style={{ textAlign: "center" }}
+//             >
+//               <span style={{ fontWeight: 700 }}>{heading}</span>
+//               <p style={{ fontWeight: 5} }>{formatBodyText(body)}</p>
+//             </div>
+//           </>
+//         ) : (
+//           <>
+//             <div
+//               className="text-sm mb-2 text-[#000000] font-semibold text-center max-w-xs"
+//               style={{ textAlign: "center" }}
+//             >
+//               <span style={{ fontWeight: 700 }}>{heading}</span>
+//               <p style={{ fontWeight: 50 }}>{formatBodyText(body)}</p>
+//             </div>
+//             <div className="w-3 h-3 bg-[#002F40] rounded-full"></div>
+//             <div
+//               className="w-[2px] bg-[#002F40]"
+//               style={{ height: `${arrowLength}px` }}
+//             ></div>
+//           </>
+//         )}
+//       </div>
+//     );
+//   };
   
-  
+////**********************************************Time line Logic**************************** *//
 
 export default TimelinePage;
