@@ -1,13 +1,124 @@
 {
     "sde":[
-        {
-            "heading":"Throughout the Journey",
-            "details":"Maintain a high CGPA and regularly give!! contest on codeforces"
+      {
+        "heading":"First year",
+        "details":"Get good hands on !! experience with !! coding in COL100"
       },
       {
-            "heading":"Post 3rd Sem",
-            "details":"Build your CV, Do projects in areas you like, find an !! internship/project for the summer, !! Participate in tech competitions to build schols"
+        "heading":"Second year",
+        "details":"Regardless of taking COL106, familiarize !! yourself with data structures and !! algorithms in any language you prefer"
+        },
+        {
+        "heading":"Second year",
+        "details":"Seek coding-related projects with  !! professors; interdisciplinary work is a !! plus"
+        },
+      { 
+        "heading":"Second year",
+        "details":"Complete intermediate-level DSA !! questions by the end of 4th semester"
+      },
+      {
+        "heading":"Summer break before 3rd year",
+        "details":"Use pre-internship summer to tackle !! hard DSA questions and study OS, !! DBMS, and other theories."
+      },
+      { 
+        "heading":"A month before interviews",
+        "details":"Tests begins for different companies after !! CV shortlist (if any) May have some !! aptitude questions"
+      },
+      {
+        "heading":"Interview",
+        "details":"Interviews focus on DSA; answer !! expected starting from brute force to !! optimal solutions."
       }
-    ]
+     
+    ],
+
+    "quant": [
+    {
+        "heading": "Throughout the Journey",
+        "details": "Maintain a high CGPA and regularly give!! contest on codeforces"
+    },
+    {
+        "heading": "Post 3rd Sem",
+        "details": "Build your CV, Do projects in areas you like, find an !! internship/project for the summer, !! Participate in tech competitions to build schols"
+    },
+    {
+        "heading": "Post 4th sem",
+        "details": "Follow the resources mentioned for brainteasers, !! probability and programming problems"
+    },
+    {
+        "heading": "1 month before interviews",
+        "details": "Begin company-specific test !! preparation in shortlisted companies"
+    },
+    {
+        "heading": "2 weeks before interviews",
+        "details": "HR prep, Mock interviews, !! Market Making"
+    }
+],
+    "core": [
+    {
+        "heading": "Prior to 4th Sem",
+        "details": "Boost CG as much as possible !! !!"
+    },
+    {
+        "heading": "Post 4th Sem",
+        "details": "Corporate or research intern, !! preferably in the manufacturing !! sector"
+    },
+    {
+        "heading": "4th Sem",
+        "details": "Take up project work either included !! in course, or led by a professor"
+    },
+    {
+        "heading": "Prior to Day 1",
+        "details": "Revisit your journey from childhood to IIT, your !! hobbies and any life changing events (these get !! asked a lot in interviews). Also revisit !! coursework and attempt mock aptitude tests"
+    },
+    {
+        "heading": "Day 1 of Interviews",
+        "details": "!! !!"
+    }
+],
+    "finance": [
+    {
+        "heading": "",
+        "details": "Start by identifying the !! exact profile of analytics you !! want to target !! e.g Finance, Data etc"
+    },
+    {
+        "heading": "3rd Sem",
+        "details": "Start coding and reach an optimum !! level till your winter break"
+    },
+    {
+        "heading": "4th Sem",
+        "details": "Develop niche knowledge about !! SQL and DBMS in totality"
+    },
+    {
+        "heading": "",
+        "details": "Continue with project lookouts and  !! gather the projects as mentioned in !! the written guide"
+    },
+    {
+        "heading": "Post 4th Sem",
+        "details": "Learn from your projects and !! practice the resources given in the !! written guide"
+    }
+    ],
+    "consult": [
+  {
+    "heading": "",
+    "details": "Start shaping your CV convey !! the story you want! !! Look to achieve ‘spikes’."
+  },
+  {
+    "heading": "Post 3rd Sem",
+    "details": "Complete internship/project to boost CV. !! Start reaching out for one timely"
+  },
+  {
+    "heading": "Post 4th Sem",
+    "details": "Completcorporate/startup/ !! foreign internships. !! Start reaching out during 4th Sem"
+  },
+  {
+    "heading": "1–2 months before interviews",
+    "details": "Form case group and start !! practicing cases"
+  },
+  {
+    "heading": "Shortly after shortlists",
+    "details": "Buddies are assigned; !! buddy cases begin"
+  }
+]
+
 }
-      
+        
