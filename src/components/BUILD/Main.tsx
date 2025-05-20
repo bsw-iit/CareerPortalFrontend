@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ReactPlayer from "react-player";
 import profileData from "../../assets/profiles.json";
 import timeData from "../../assets/TimelineProfile.json"
-import Timeline, { timePointType } from "./Timeline";
+import Timeline from "./Timeline";
 
 const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {  
   
