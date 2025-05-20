@@ -175,13 +175,13 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
                 <ReactPlayer key={playerKey}  url={playingURL}  className="react-player" light = {true} width="100%" height="100%" controls  
     ref={playerRef}/>    </div>
     <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8 bg-[#FFFFFF]">
-                        <h1 className="text-6xl font-bold text-center text-black mb-5" style={{ fontFamily: "Cormorant Infant, serif", fontWeight: "700" }}>FAQs</h1>
+                        <h1 className="text-4xl font-bold text-center text-black mb-5" style={{ fontFamily: "Cormorant Infant, serif", fontWeight: "700" }}>FAQs</h1>
                         <p className="text-2xl text-center text-black" style={{
         fontFamily: "Montserrat, sans-serif",
         fontWeight: 600,
         
       }}>All your Questions Answered!</p>
-                        <p className="text-2xl text-center text-black mb-8" style={{
+                        <p className="text-xl text-center text-black mb-8" style={{
         fontFamily: "Montserrat, sans-serif",
         fontWeight: "normal",
         marginBottom: "50px", // Increased space
@@ -256,7 +256,7 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
 <div className="flex flex-col-reverse md:flex-row w-full">
 <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8 bg-[#FFFFFF]">
     <h1
-        className="text-5xl text-center text-black mb-6"
+        className="text-4xl text-center text-black mb-6"
         style={{
             fontFamily: "Cormorant Infant, serif", // Set font for CV Making
             fontWeight: "700" // Custom font weight for the heading
@@ -265,7 +265,7 @@ const TimelinePage = ({ profileName }: { profileName: string | undefined }) => {
         CV Making
     </h1>
     <p
-        className="text-2xl text-center text-black mb-4"
+        className="text-xl text-center text-black mb-4"
         style={{
             fontFamily: "Montserrat, sans-serif", // Set font for the paragraph text
             fontWeight: "normal" // Normal font weight for the body text
