@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Globe, Mail, School, Phone, Boo
 export default function Footer() {
     const navigate = useNavigate();
     const BSWClick=()=>{
-        navigate('/home');
+        navigate('/');
     }
     return (
         <footer className="bg-[#0B2937] text-gray-300 py-12 px-6">
@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Left Section */}
                     <div >
-                        <h2 onClick={BSWClick} className="text-3xl hover:cursor-pointer font-bold mb-4 text-white">BSW Academic Portal</h2>
+                        <h2 onClick={BSWClick} className="text-3xl hover:cursor-pointer font-bold mb-4 text-white">BSW Career Portal</h2>
                         <div className="flex gap-4 mb-2">
                             <Link to="#" className="hover:text-white">
                                 <Twitter className="w-5 h-5" />
