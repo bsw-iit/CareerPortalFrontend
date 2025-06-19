@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
 import { Facebook, Twitter, Instagram, Linkedin, Globe, Mail, School, Phone, BookOpen, Building2 } from "lucide-react"
-import { Navigate } from "react-router-dom"
 export default function Footer() {
     const navigate = useNavigate();
     const BSWClick=()=>{
@@ -14,19 +13,19 @@ export default function Footer() {
                     <div >
                         <h2 onClick={BSWClick} className="text-3xl hover:cursor-pointer font-bold mb-4 text-white">BSW Academic Portal</h2>
                         <div className="flex gap-4 mb-2">
-                            <Link href="#" className="hover:text-white">
+                            <Link to="#" className="hover:text-white">
                                 <Twitter className="w-5 h-5" />
                                 <span className="sr-only">Twitter</span>
                             </Link>
-                            <Link href="#" className="hover:text-white">
+                            <Link to="#" className="hover:text-white">
                                 <Facebook className="w-5 h-5" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
-                            <Link href="#" className="hover:text-white">
+                            <Link to="#" className="hover:text-white">
                                 <Instagram className="w-5 h-5" />
                                 <span className="sr-only">Instagram</span>
                             </Link>
-                            <Link href="#" className="hover:text-white">
+                            <Link to="#" className="hover:text-white">
                                 <Linkedin className="w-5 h-5" />
                                 <span className="sr-only">LinkedIn</span>
                             </Link>
@@ -36,7 +35,7 @@ export default function Footer() {
                             <a href="https://www.linkedin.com/in/aryan-sharma-326657230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="text-teal-400 hover:text-teal-300">
                                 Aryan Sharma
                             </a><br />
-                            BSW Secretary{" "}
+                            BSW General Secretary{" "}
                             <a href="https://www.linkedin.com/in/jivant-garg-a9225a24a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="text-teal-400 hover:text-teal-300">
                                 Jivant Garg
                             </a>
