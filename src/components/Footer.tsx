@@ -7,7 +7,7 @@ export default function Footer() {
         navigate('/home');
     }
     return (
-        <footer className="bg-black text-gray-300 py-12 px-6">
+        <footer className="bg-[#0B2937] text-gray-300 py-12 px-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Left Section */}
