@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Facebook, Twitter, Instagram, Linkedin, Globe, Mail, School, Phone, BookOpen, Building2 } from "lucide-react"
 export default function Footer() {
     const navigate = useNavigate();
@@ -13,22 +13,42 @@ export default function Footer() {
                     <div >
                         <h2 onClick={BSWClick} className="text-3xl hover:cursor-pointer font-bold mb-4 text-white">BSW Career Portal</h2>
                         <div className="flex gap-4 mb-2">
-                            <Link to="#" className="hover:text-white">
+                            <a
+                                href="https://x.com/bswiitd"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white"
+                            >
                                 <Twitter className="w-5 h-5" />
                                 <span className="sr-only">Twitter</span>
-                            </Link>
-                            <Link to="#" className="hover:text-white">
+                            </a>
+                            <a
+                                href="https://www.facebook.com/boardforstudentwelfare/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white"
+                            >
                                 <Facebook className="w-5 h-5" />
                                 <span className="sr-only">Facebook</span>
-                            </Link>
-                            <Link to="#" className="hover:text-white">
+                            </a>
+                            <a
+                                href="https://instagram.com/bsw_iitd"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white"
+                            >
                                 <Instagram className="w-5 h-5" />
                                 <span className="sr-only">Instagram</span>
-                            </Link>
-                            <Link to="#" className="hover:text-white">
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/bsw-iitd/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white"
+                            >
                                 <Linkedin className="w-5 h-5" />
                                 <span className="sr-only">LinkedIn</span>
-                            </Link>
+                            </a>
                         </div>
                         <p className="mb-4">
                             BSW Coordinator{" "}
@@ -63,7 +83,22 @@ export default function Footer() {
                                 Devesh
                             </a>
                         </p>
-
+                        <p className="mb-4">
+                            Co-Created by{" "}
+                                <a href="https://www.linkedin.com/in/vanshika-tripathi-0b8b1a24b/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Vanshika Tripathi 
+                            </a>{" "}
+                            and{" "}
+                                <a href="https://www.linkedin.com/in/advik-gupta/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Advik Gupta
+                            </a>
+                        </p>
+                        <p className="mb-4">
+                            Conceptualized by{" "}
+                            <a href="https://www.linkedin.com/in/tanisi-mishra/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Tanisi Mishra
+                            </a>{" "}
+                        </p>                            
                     </div>
 
                     {/* Middle Section */}
