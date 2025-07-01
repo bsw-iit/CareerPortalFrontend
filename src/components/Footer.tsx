@@ -51,38 +51,11 @@ export default function Footer() {
                             </a>
                         </div>
                         <p className="mb-4">
-                            BSW Coordinator{" "}
-                            <a href="https://www.linkedin.com/in/aryan-sharma-326657230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Aryan Sharma
-                            </a><br />
-                            BSW General Secretary{" "}
-                            <a href="https://www.linkedin.com/in/jivant-garg-a9225a24a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Jivant Garg
-                            </a>
-                        </p>
-                        <p className="mb-4">
-                            Website Created and Maintained by{" "}
-                            <a href="https://www.linkedin.com/in/rohit-kumar-ab0b412b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Rohit
-                            </a>{"   "}
-                            and{"   "}
-                            <a href="https://www.linkedin.com/in/sarvik-mehta-72267a28a/" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Sarvik Mehta
-                            </a>
-                        </p>
-                        <p className="mb-4">
-                            Designed by{" "}
-                            <a href="https://www.linkedin.com/in/lakshay-aa7510293/" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Lakshay
-                            </a>{", "}
-                            <a href="https://www.linkedin.com/in/harshit-gour-532b84291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Harshit
+                            Conceptualized by{" "}
+                            <a href="https://www.linkedin.com/in/tanisi-mishra/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Tanisi Mishra
                             </a>{" "}
-                            and{" "}
-                            <a href="https://www.linkedin.com/in/devesh-sharma-bb931730a/" target="_blank" className="text-teal-400 hover:text-teal-300">
-                                Devesh
-                            </a>
-                        </p>
+                        </p> 
                         <p className="mb-4">
                             Co-Created by{" "}
                                 <a href="https://www.linkedin.com/in/vanshika-tripathi-0b8b1a24b/" target="_blank" className="text-teal-400 hover:text-teal-300">
@@ -92,13 +65,7 @@ export default function Footer() {
                                 <a href="https://www.linkedin.com/in/advik-gupta/" target="_blank" className="text-teal-400 hover:text-teal-300">
                             Advik Gupta
                             </a>
-                        </p>
-                        <p className="mb-4">
-                            Conceptualized by{" "}
-                            <a href="https://www.linkedin.com/in/tanisi-mishra/" target="_blank" className="text-teal-400 hover:text-teal-300">
-                            Tanisi Mishra
-                            </a>{" "}
-                        </p>                            
+                        </p>                           
                     </div>
 
                     {/* Middle Section */}
