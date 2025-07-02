@@ -259,6 +259,14 @@ export default function Navbar() {
                       Higher Studies
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/Resource/summer_guide"
+                      className="block py-2 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Summer Guide
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
