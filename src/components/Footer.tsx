@@ -56,7 +56,7 @@ export default function Footer() {
                             Tanisi Mishra
                             </a>{" "}
                         </p> 
-                        <p className="mb-4">
+                        <p className="mb-12">
                             Co-Created by{" "}
                                 <a href="https://www.linkedin.com/in/vanshika-tripathi-0b8b1a24b/" target="_blank" className="text-teal-400 hover:text-teal-300">
                             Vanshika Tripathi 
@@ -66,6 +66,18 @@ export default function Footer() {
                             Advik Gupta
                             </a>
                         </p>                           
+                        <p className="mb-4">
+                            General Secretary{" "}
+                            <a href="https://www.linkedin.com/in/jivant-garg-a9225a24a/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Jivant Garg
+                            </a>{" "}
+                        </p> 
+                        <p className="mb-4">
+                            Career Co-ordinator{" "}
+                            <a href="https://www.linkedin.com/in/aniket-anand-7aa963341/" target="_blank" className="text-teal-400 hover:text-teal-300">
+                            Aniket Anand
+                            </a>{" "}
+                        </p> 
                     </div>
 
                     {/* Middle Section */}
