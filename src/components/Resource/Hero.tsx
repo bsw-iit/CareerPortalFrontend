@@ -30,7 +30,7 @@ export default function Hero({ profileName }: { profileName: string | undefined 
 function Background({ bg_images }: { bg_images: string }) {
     // Updated to use `bg_image1` instead of `bg_image`
     return (
-        <div className="hidden md:flex">
+        <div className="hidden md:flex mt-16">
             <img
                 src={bg_images}
                 alt="Background Image"
