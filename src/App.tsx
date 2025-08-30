@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import Footer from './components/Footer';
 import HigherStudies from "./pages/HigherStudies.tsx"; 
 import SummerGuide from "./pages/SummerGuide.tsx";
+import Aiml from "./pages/aiml.tsx";
+import Consult from "./pages/consult.tsx";
 
 export default function App() {
   return (
@@ -20,6 +22,9 @@ export default function App() {
         {/* Dynamic Profile Page */}
         <Route path="/higher-studies" element={<HigherStudies />} />
         <Route path="/summer-guide" element={<SummerGuide />} />
+        <Route path="/aiml" element={<Aiml />} />
+        <Route path="/consult" element={<Consult />} />
+
         <Route path="/explore/:profileName" element={<ExplorePage />} />
         
         {/* Build Folder Pages */}
