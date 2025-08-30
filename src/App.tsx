@@ -10,6 +10,8 @@ import HigherStudies from "./pages/HigherStudies.tsx";
 import SummerGuide from "./pages/SummerGuide.tsx";
 import Aiml from "./pages/aiml.tsx";
 import Consult from "./pages/consult.tsx";
+import Cat from "./pages/cat.tsx";
+import Upsc from "./pages/upsc.tsx";
 
 export default function App() {
   return (
@@ -24,7 +26,8 @@ export default function App() {
         <Route path="/summer-guide" element={<SummerGuide />} />
         <Route path="/aiml" element={<Aiml />} />
         <Route path="/consult" element={<Consult />} />
-
+        <Route path="/cat" element={<Cat />} />
+        <Route path="/upsc" element={<Upsc />} />
         <Route path="/explore/:profileName" element={<ExplorePage />} />
         
         {/* Build Folder Pages */}
