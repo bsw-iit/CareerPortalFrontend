@@ -275,7 +275,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="focus:outline-none">
+          <button type="button" onClick={toggleMenu} className="focus:outline-none" aria-label="Toggle menu">
             <svg
               className="w-8 h-8"
               fill="none"
