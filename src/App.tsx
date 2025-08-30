@@ -6,6 +6,8 @@ import BuildPage from "./pages/BUILD"; // Placeholder for build pages
 import ResourcePage from "./pages/Resource"; 
 import NotFound from "./pages/NotFound";
 import Footer from './components/Footer';
+import HigherStudies from "./pages/HigherStudies.tsx"; 
+import SummerGuide from "./pages/SummerGuide.tsx";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
         <Route path="/" element={<Landing />} />
         
         {/* Dynamic Profile Page */}
+        <Route path="/higher-studies" element={<HigherStudies />} />
+        <Route path="/summer-guide" element={<SummerGuide />} />
         <Route path="/explore/:profileName" element={<ExplorePage />} />
         
         {/* Build Folder Pages */}
