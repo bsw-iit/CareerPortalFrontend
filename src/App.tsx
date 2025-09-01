@@ -16,6 +16,8 @@ import CoreExplore from "./pages/CoreExplore";
 import AnalyticsExplore from "./pages/AnalyticsExplore";
 import CoreBuild from "./pages/CoreBuild";
 import AnalyticsBuild from "./pages/AnalyticsBuild";
+import SDE from "./pages/SDE";
+import Quant from "./pages/quant";
 
 export default function App() {
   return (
@@ -32,9 +34,13 @@ export default function App() {
         <Route path="/consult" element={<Consult />} />
         <Route path="/cat" element={<Cat />} />
         <Route path="/upsc" element={<Upsc />} />
-        <Route path="/explore/core" element={<CoreExplore />} />
-        <Route path="/explore/analytics" element={<AnalyticsExplore />} />
+        <Route path="/sde" element={<SDE />} />
+        <Route path="/quant" element={<Quant />} />
+        <Route path="/core" element={<CoreExplore />} />
+        <Route path="/analytics" element={<AnalyticsExplore />} />
+        
         <Route path="/explore/:profileName" element={<ExplorePage />} />
+        
         
         {/* Build Folder Pages */}
         <Route path="/build/core" element={<CoreBuild />} />
