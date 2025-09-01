@@ -12,6 +12,10 @@ import Aiml from "./pages/aiml.tsx";
 import Consult from "./pages/consult.tsx";
 import Cat from "./pages/cat.tsx";
 import Upsc from "./pages/upsc.tsx";
+import CoreExplore from "./pages/CoreExplore";
+import AnalyticsExplore from "./pages/AnalyticsExplore";
+import CoreBuild from "./pages/CoreBuild";
+import AnalyticsBuild from "./pages/AnalyticsBuild";
 
 export default function App() {
   return (
@@ -28,9 +32,13 @@ export default function App() {
         <Route path="/consult" element={<Consult />} />
         <Route path="/cat" element={<Cat />} />
         <Route path="/upsc" element={<Upsc />} />
+        <Route path="/explore/core" element={<CoreExplore />} />
+        <Route path="/explore/analytics" element={<AnalyticsExplore />} />
         <Route path="/explore/:profileName" element={<ExplorePage />} />
         
         {/* Build Folder Pages */}
+        <Route path="/build/core" element={<CoreBuild />} />
+        <Route path="/build/analytics" element={<AnalyticsBuild />} />
         <Route path="/build/:profileName" element={<BuildPage />} />
         <Route path="/Resource/:profileName" element={<ResourcePage />} />
         <Route path="*" element={<NotFound/>}/>
