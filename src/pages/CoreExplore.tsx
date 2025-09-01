@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
-import Hero from "Hero.tsx";
+import Hero from "../components/explore/Hero_modified";
 import BG from "../assets/Resource/explore/default-home-bg.svg";
-import Body from "CoreExploreBody.tsx";
+import Body from "../components/explore/CoreExploreBody";
 
 export default function CoreExplore() {
   return (

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
-import Hero from "Hero.tsx";
+import Hero from "../components/explore/Hero_modified";
 import BG from "../assets/Resource/explore/analytics-home-bg.svg";
-import Body from "AnalyticsExploreBody.tsx";
+import Body from "../components/explore/AnalyticsExploreBody";
 
 export default function AnalyticsExplore() {
   return (
