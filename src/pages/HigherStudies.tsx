@@ -1,13 +1,12 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero.tsx";
 import BG from "../assets/Resource/Higher_Studies.svg";
-
 export default function HigherStudies() {
   return (
     <div>
       <Navbar />
       <Hero bg={BG} heading="Higher Studies" title="Build your career the right way!" />
-      <div><div className="flex flex-col items-center justify-start w-full ">
+       <div className="flex flex-col items-center justify-start w-full ">
           <main className=" p-10 text-gray-900" style={{fontFamily:'Poppins, sans-serif'}}>
             {/* Header */}
             <header>
@@ -184,7 +183,7 @@ export default function HigherStudies() {
               </ul>
             </section>
           </main>
-        </div></div>
+        </div>
     </div>
   );
 }
