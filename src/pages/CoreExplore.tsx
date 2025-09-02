@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/explore/Hero_modified";
-import BG from "../assets/Resource/explore/default-home-bg.svg";
+import BG from "../assets/explore/default-home-bg.svg";
 import Body from "../components/explore/CoreExploreBody";
 
 export default function CoreExplore() {

@@ -36,9 +36,10 @@ export default function App() {
         <Route path="/upsc" element={<Upsc />} />
         <Route path="/sde" element={<SDE />} />
         <Route path="/quant" element={<Quant />} />
-        <Route path="/core" element={<CoreExplore />} />
-        <Route path="/analytics" element={<AnalyticsExplore />} />
-        
+        <Route path="/coreExplore" element={<CoreExplore />} />
+        <Route path="/coreBuild" element={<CoreBuild />} />
+        <Route path="/analyticsExplore" element={<AnalyticsExplore />} />
+        <Route path="/analyticsBuild" element={<AnalyticsBuild />} />
         <Route path="/explore/:profileName" element={<ExplorePage />} />
         
         
