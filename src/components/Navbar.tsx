@@ -97,7 +97,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full z-10 h-[50px] md:h-[70px] bg-[#EDEDED] text-[#133748] font-[Poppins] fixed shadow-lg shadow-black/10">
+    <div className="w-full z-50 h-[50px] md:h-[70px] bg-[#EDEDED] text-[#133748] font-[Poppins] fixed shadow-lg shadow-black/10">
       <div className="w-full h-full flex justify-between px-6 md:px-10 items-center">
         <div id="left-box">
           <h1 className="text-2xl md:text-3xl font-extrabold cursor-pointer">
