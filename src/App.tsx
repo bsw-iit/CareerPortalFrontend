@@ -6,21 +6,26 @@ import Landing from "./pages/Landing";
 // import ResourcePage from "./pages/Resource"; 
 import NotFound from "./pages/NotFound";
 import Footer from './components/Footer';
-import HigherStudies from "./pages/HigherStudies.tsx"; 
-import SummerGuide from "./pages/SummerGuide.tsx";
-import Aiml from "./pages/aiml.tsx";
-import Consult from "./pages/consult.tsx";
-import Cat from "./pages/cat.tsx";
-import Upsc from "./pages/upsc.tsx";
-import CoreExplore from "./pages/CoreExplore";
-import AnalyticsExplore from "./pages/AnalyticsExplore";
-import CoreBuild from "./pages/CoreBuild";
-import AnalyticsBuild from "./pages/AnalyticsBuild";
-import SDE from "./pages/SDE";
-import Quant from "./pages/quant";
-// import SDEExplore from "./pages/SDEexplore.tsx";
-// import QuantExplore from "./pages/Quantexplore.tsx";
-// import ConsultExplore from "./pages/ConsultExplore.tsx"
+
+import HigherStudies from "./pages/resources/HigherStudies.tsx"; 
+import SummerGuide from "./pages/resources/SummerGuide.tsx";
+import Cat from "./pages/resources/cat.tsx";
+import Upsc from "./pages/resources/upsc.tsx";
+
+import Aiml from "./pages/explore/aiml.tsx";
+import ConsultExplore from "./pages/explore/consultExplore.tsx"
+import QuantExplore from "./pages/explore/quantExplore.tsx";
+import CoreExplore from "./pages/explore/CoreExplore.tsx";
+import SDEExplore from "./pages/explore/SDEexplore.tsx";
+import AnalyticsExplore from "./pages/explore/AnalyticsExplore";
+
+import CoreBuild from "./pages/build/CoreBuild";
+import AnalyticsBuild from "./pages/build/AnalyticsBuild";
+import SDE from "./pages/build/SDE";
+import Quant from "./pages/build/quant";
+import Consult from "./pages/build/consult.tsx";
+
+
 
 export default function App() {
   return (
@@ -31,12 +36,12 @@ export default function App() {
         <Route path="/" element={<Landing />} />
 
         {/* Dynamic Explore Pages */}
-        {/* <Route path="/explore/sde" element={<SDEExplore />} />
-        <Route path="/explore/quant" element={<QuantExplore />} /> */}
+        <Route path="/explore/sde" element={<SDEExplore />} />
+        <Route path="/explore/quant" element={<QuantExplore />} />
         <Route path="/explore/core" element={<CoreExplore />} />
         <Route path="/explore/finance" element={<AnalyticsExplore />} />
         <Route path="/explore/ai-ml" element={<Aiml />} />       
-        {/* <Route path="/explore/consult" element={<ConsultExplore />} /> */}
+        <Route path="/explore/consult" element={<ConsultExplore />} />
 
 
         {/* Dynamic Build Page */}

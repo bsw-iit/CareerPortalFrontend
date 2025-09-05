@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero.tsx";
-import BG from "../assets/Resource/SummerGuide.svg"
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero.tsx";
+import BG from "../../assets/Resource/SummerGuide.svg"
 export default function SummerGuide() {
   return (
     <div>

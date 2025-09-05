@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero.tsx";
-import BG from "../assets/Resource/UPSC.svg";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero.tsx";
+import BG from "../../assets/Resource/UPSC.svg";
 
 export default function upsc() {
   return (

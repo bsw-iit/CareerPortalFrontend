@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Timeline from "../components/timeline.tsx";
-import VideoGrid from "../components/videogrid.tsx";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import Timeline from "../../components/timeline.tsx";
+import VideoGrid from "../../components/videogrid.tsx";
 
 export default function Quant(){
   const quantData = {

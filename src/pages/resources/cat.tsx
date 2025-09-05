@@ -1,16 +1,16 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Header from "../components/CAT-page-component/header.tsx";
-import Cell from "../components/CAT-page-component/quicknav.tsx";
-import Intro from "../components/CAT-page-component/intro.tsx";
-import Pattern from "../components/CAT-page-component/pattern.tsx";
-import FAQ from "../components/CAT-page-component/faq.tsx";
-import MocksAndPlanning from "../components/CAT-page-component/mockplanning.tsx";
-import IIM from "../components/CAT-page-component/iim.tsx";
-import Syallabus from "../components/CAT-page-component/syallabus.tsx";
-import VideoBlog from "../components/CAT-page-component/videsblog.tsx";
-import QuickDoDont from "../components/CAT-page-component/dodonts.tsx";
-import SeniorAdvice from "../components/CAT-page-component/senioradvice.tsx";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import Header from "../../components/CAT-page-component/header.tsx";
+import Cell from "../../components/CAT-page-component/quicknav.tsx";
+import Intro from "../../components/CAT-page-component/intro.tsx";
+import Pattern from "../../components/CAT-page-component/pattern.tsx";
+import FAQ from "../../components/CAT-page-component/faq.tsx";
+import MocksAndPlanning from "../../components/CAT-page-component/mockplanning.tsx";
+import IIM from "../../components/CAT-page-component/iim.tsx";
+import Syallabus from "../../components/CAT-page-component/syallabus.tsx";
+import VideoBlog from "../../components/CAT-page-component/videsblog.tsx";
+import QuickDoDont from "../../components/CAT-page-component/dodonts.tsx";
+import SeniorAdvice from "../../components/CAT-page-component/senioradvice.tsx";
 import {
   VARC,
   DILR,
@@ -20,7 +20,7 @@ import {
   adviceList,
   doList,
   dontList,
-} from "../components/CAT-page-component/data.ts";
+} from "../../components/CAT-page-component/data.ts";
 
 export default function CatPage() {
   const navItems = [

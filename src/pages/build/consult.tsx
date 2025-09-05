@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero.tsx";
-import BG from "../assets/explore/consult-home-bg.svg";
-import VideoGrid from "../components/videogrid.tsx";
-import Timeline from "../components/timeline.tsx";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero.tsx";
+import BG from "../../assets/explore/consult-home-bg.svg";
+import VideoGrid from "../../components/videogrid.tsx";
+import Timeline from "../../components/timeline.tsx";
 
 export default function ConsultBody() {
   const cousltdata = {
