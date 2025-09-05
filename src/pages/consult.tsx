@@ -1,8 +1,21 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero.tsx";
 import BG from "../assets/explore/consult-home-bg.svg";
+import VideoGrid from "../components/videogrid.tsx";
+import Timeline from "../components/timeline.tsx";
 
 export default function ConsultBody() {
+  const cousltdata = {
+  downwardLabels: [
+    "                Start shaping your CV convey !! the story you want!! Look to achieve 'spikes'",
+    "Post 3rd Sem    Complete internship/project to boost CV. !! Start reaching out for one timely",
+    "Post 4th Sem    Complete corporate/startup/ !! foreign internships. !! Start reaching out during 4th Sem",
+    "1-2 months before interviews    Form case group and start !! practicing cases",
+    "Shortly after shortlists    Buddies are assigned; !! buddy cases begin",
+  ],
+};
+
+
   return (
     <div>
       <Navbar />
@@ -11,6 +24,8 @@ export default function ConsultBody() {
         heading="Consult"
         title="Build your career the right way!"
       />
+      <Timeline data={cousltdata}/>
+      <VideoGrid iframeUrl1="https://www.youtube.com/embed/GyVqlN3l1e0" iframeUrl2="https://www.youtube.com/embed/ssa7AXMpmXs" questions={["What does a consultant do?", "An overview of the process", "What are different sections of CV? What is a spike?", "What is the importance of CG and Schols?", "How should the internship section look like? ", "How should PoR section look like?"," "," How should the ECA section look like?"," Tell us about buddy cases"," How to navigate through the interview day?"]} timestamps={["4",  "140",  "201","257","359","448"," ","633","655","905"]}/>
       <div className="flex flex-col items-center justify-start w-full ">
         <main
           className="p-10 text-gray-900"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import Timeline from "./Timeline";
+import Timeline_vertical from "../timeline"
 
 export default function Body() {
   // ---------- Hardcoded profile data (verbatim from your JSON) ----------
@@ -75,6 +76,16 @@ HR Round: Create a brief but compelling self-introduction. Highlight academic in
     },
     { heading: "Day 1 of Interviews", details: "!! !!" },
   ];
+
+  const coredata = {
+  downwardLabels: [
+    "Prior to 4th Sem    Boost CG as much as possible !! !!",
+    "4th Sem    Take up project work either included !! in course, or led by a professor",
+    "Post 4th Sem    Corporate or research intern, !! preferably in the manufacturing !! sector",
+    "Prior to Day 1    Revisit your journey from childhood to IIT, your !! hobbies and any life changing events (these get !! asked a lot in interviews). Also revisit !! coursework and attempt mock aptitude tests",
+    "Day 1 of Interviews    !! !!",
+  ],
+};
 
   // ---------- Player / FAQ tooltip state ----------
   const [readMore, setReadMore] = useState(false);
@@ -234,7 +245,7 @@ HR Round: Create a brief but compelling self-introduction. Highlight academic in
   return (
     <div className="w-full min-h-screen bg-[#FFFFFF] flex flex-col items-center">
       <div className="flex-grow w-full">
-        <div className="w-full py-2 flex flex-col items-center relative">
+        {/* <div className="w-full py-2 flex flex-col items-center relative">
           <h1
             className="text-3xl md:text-5xl font-bold text-center mb-8 mt-0"
             style={{
@@ -248,13 +259,11 @@ HR Round: Create a brief but compelling self-introduction. Highlight academic in
             Suggested Timeline
           </h1>
 
-          {/* Timeline SVG */}
           <div className="relative w-full" style={{ minHeight: curveHeight + 120 }}>
             <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 1000 ${curveHeight}`} preserveAspectRatio="none" style={{ overflow: "visible" }}>
               <path d={pathD} stroke="#002F40" strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
 
-            {/* Render arrows (timelineNodes) */}
             {timelineNodes.map((node) => (
               <TimelineArrow
                 key={node.idx}
@@ -266,7 +275,8 @@ HR Round: Create a brief but compelling self-introduction. Highlight academic in
               />
             ))}
           </div>
-        </div>
+        </div> */}
+        <Timeline_vertical data={coredata}/>
 
         {/* Video + FAQs */}
         <div className="flex flex-col md:flex-row w-full bg-[#FFFFFF] mt-12">
