@@ -15,7 +15,7 @@ import Upsc from "./pages/resources/upsc.tsx";
 import Aiml from "./pages/explore/aiml.tsx";
 import ConsultExplore from "./pages/explore/consultExplore.tsx"
 import QuantExplore from "./pages/explore/quantExplore.tsx";
-import CoreExplore from "./pages/explore/CoreExplore.tsx";
+
 import SDEExplore from "./pages/explore/SDEexplore.tsx";
 import AnalyticsExplore from "./pages/explore/AnalyticsExplore";
 
@@ -24,6 +24,7 @@ import AnalyticsBuild from "./pages/build/AnalyticsBuild";
 import SDE from "./pages/build/SDE";
 import Quant from "./pages/build/quant";
 import Consult from "./pages/build/consult.tsx";
+import CoreExplore from "./pages/explore/coreExplore.tsx";
 
 
 
