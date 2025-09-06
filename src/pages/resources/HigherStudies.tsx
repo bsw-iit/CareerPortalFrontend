@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero.tsx";
-import BG from "../assets/Resource/Higher_Studies.svg";
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero.tsx";
+import BG from "../../assets/Resource/Higher_Studies.svg";
 export default function HigherStudies() {
   return (
     <div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import Timeline from "./Timeline";
+import Timeline_vertical from "../timeline";
 
 export default function Body() {
   // ---------- Hardcoded profile data (from Finance JSON) ----------
@@ -54,6 +55,16 @@ export default function Body() {
     { heading: " ", details: "Continue with project lookouts and !! gather the projects as mentioned in !! the written guide" },
     { heading: "Post 4th Sem", details: "Learn from your projects and !! practice the resources given in !! the written guide" },
   ];
+
+  const analyticsData = {
+  downwardLabels: [
+    "Start by identifying the !! exact profile of analytics you !! want to target !! e.g Finance, Data etc",
+    "3rd Sem    Start coding and reach an optimum !! level till your winter break",
+    "4th Sem    Develop niche knowledge about !! SQL and DBMS in totality",
+    "Continue with project lookouts and !! gather the projects as mentioned in !! the written guide",
+    "Post 4th Sem    Learn from your projects and !! practice the resources given in !! the written guide",
+  ],
+};
 
   // ---------- Player / FAQ state ----------
   const [hoveredQuestion, setHoveredQuestion] = useState<string | null>(null);
@@ -167,10 +178,7 @@ export default function Body() {
     <div className="w-full min-h-screen bg-[#FFFFFF] flex flex-col items-center">
       <div className="flex-grow w-full">
         {/* Timeline */}
-        <div className="w-full py-2 flex flex-col items-center relative">
-          <h1 className="text-3xl md:text-5xl font-bold text-center mb-8" style={{ color: "#002F40" }}>
-            Suggested Timeline
-          </h1>
+        {/* <div className="w-full py-2 flex flex-col items-start relative">
           <div className="relative w-full" style={{ minHeight: curveHeight + 120 }}>
             <svg className="absolute w-full h-full" viewBox={`0 0 1000 ${curveHeight}`} preserveAspectRatio="none">
               <path d={pathD} stroke="#002F40" strokeWidth={14} fill="none" />
@@ -179,7 +187,8 @@ export default function Body() {
               <TimelineArrow key={node.idx} left={node.posX} top={node.posY} direction={node.direction} heading={node.heading} details={node.details} />
             ))}
           </div>
-        </div>
+        </div> */}
+        <Timeline_vertical data={analyticsData}/>
 
         {/* Video + FAQs */}
         <div className="flex flex-col md:flex-row w-full mt-12">

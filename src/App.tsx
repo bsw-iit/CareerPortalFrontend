@@ -1,23 +1,31 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from './components/ScrollToTop';
 import Landing from "./pages/Landing";
-import ExplorePage from "./pages/Explore";
-import BuildPage from "./pages/BUILD"; // Placeholder for build pages
-import ResourcePage from "./pages/Resource"; 
+// import ExplorePage from "./pages/Explore";
+// import BuildPage from "./pages/BUILD"; 
+// import ResourcePage from "./pages/Resource"; 
 import NotFound from "./pages/NotFound";
 import Footer from './components/Footer';
-import HigherStudies from "./pages/HigherStudies.tsx"; 
-import SummerGuide from "./pages/SummerGuide.tsx";
-import Aiml from "./pages/aiml.tsx";
-import Consult from "./pages/consult.tsx";
-import Cat from "./pages/cat.tsx";
-import Upsc from "./pages/upsc.tsx";
-import CoreExplore from "./pages/CoreExplore";
-import AnalyticsExplore from "./pages/AnalyticsExplore";
-import CoreBuild from "./pages/CoreBuild";
-import AnalyticsBuild from "./pages/AnalyticsBuild";
-import SDE from "./pages/SDE";
-import Quant from "./pages/quant";
+
+import HigherStudies from "./pages/resources/HigherStudies.tsx"; 
+import SummerGuide from "./pages/resources/SummerGuide.tsx";
+import Cat from "./pages/resources/cat.tsx";
+import Upsc from "./pages/resources/upsc.tsx";
+
+import Aiml from "./pages/explore/aiml.tsx";
+import ConsultExplore from "./pages/explore/consultExplore.tsx"
+import QuantExplore from "./pages/explore/quantExplore.tsx";
+import CoreExplore from "./pages/explore/CoreExplore.tsx";
+import SDEExplore from "./pages/explore/SDEexplore.tsx";
+import AnalyticsExplore from "./pages/explore/AnalyticsExplore";
+
+import CoreBuild from "./pages/build/CoreBuild";
+import AnalyticsBuild from "./pages/build/AnalyticsBuild";
+import SDE from "./pages/build/SDE";
+import Quant from "./pages/build/quant";
+import Consult from "./pages/build/consult.tsx";
+
+
 
 export default function App() {
   return (
@@ -26,28 +34,34 @@ export default function App() {
       <Routes>
         {/* Default Landing Page */}
         <Route path="/" element={<Landing />} />
+
+        {/* Dynamic Explore Pages */}
+        <Route path="/explore/sde" element={<SDEExplore />} />
+        <Route path="/explore/quant" element={<QuantExplore />} />
+        <Route path="/explore/core" element={<CoreExplore />} />
+        <Route path="/explore/finance" element={<AnalyticsExplore />} />
+        <Route path="/explore/ai-ml" element={<Aiml />} />       
+        <Route path="/explore/consult" element={<ConsultExplore />} />
+
+
+        {/* Dynamic Build Page */}
+        <Route path="/BUILD/sde" element={<SDE />} />
+        <Route path="/BUILD/quant" element={<Quant />} />
+        <Route path="/BUILD/core" element={<CoreBuild />} />
+        <Route path="/BUILD/finance" element={<AnalyticsBuild />} />
+        <Route path="/BUILD/consult" element={<Consult />} />
         
-        {/* Dynamic Profile Page */}
-        <Route path="/higher-studies" element={<HigherStudies />} />
-        <Route path="/summer-guide" element={<SummerGuide />} />
-        <Route path="/aiml" element={<Aiml />} />
-        <Route path="/consult" element={<Consult />} />
-        <Route path="/cat" element={<Cat />} />
-        <Route path="/upsc" element={<Upsc />} />
-        <Route path="/sde" element={<SDE />} />
-        <Route path="/quant" element={<Quant />} />
-        <Route path="/coreExplore" element={<CoreExplore />} />
-        <Route path="/coreBuild" element={<CoreBuild />} />
-        <Route path="/analyticsExplore" element={<AnalyticsExplore />} />
-        <Route path="/analyticsBuild" element={<AnalyticsBuild />} />
-        <Route path="/explore/:profileName" element={<ExplorePage />} />
-        
-        
-        {/* Build Folder Pages */}
-        <Route path="/build/core" element={<CoreBuild />} />
-        <Route path="/build/analytics" element={<AnalyticsBuild />} />
-        <Route path="/build/:profileName" element={<BuildPage />} />
-        <Route path="/Resource/:profileName" element={<ResourcePage />} />
+        {/* Dynamic Resource page */}
+        <Route path="/Resource/UPSC" element={<Upsc />} />
+        <Route path="/Resource/CAT" element={<Cat />} />
+        <Route path="/Resource/Higher_Studies" element={<HigherStudies />} />
+        <Route path="/Resource/summer_guide" element={<SummerGuide />} />
+               
+        {/* <Route path="/explore/:profileName" element={<ExplorePage />} /> */}
+        {/* <Route path="/build/:profileName" element={<BuildPage />} /> */}
+        {/* <Route path="/Resource/:profileName" element={<ResourcePage />} /> */}
+
+        {/* ALL OTHER CATCH */}
         <Route path="*" element={<NotFound/>}/>
         
       </Routes>
