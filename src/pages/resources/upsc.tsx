@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, BookOpen, Clock, Users, CalendarDays, Zap } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Hero from '../../components/Hero';
+import UpscPageBg from '../../assets/Resource/UPSC.svg';
 // --- Data Structure (Derived from User Input) ---
 
 const initialData = {
@@ -372,7 +373,7 @@ const App = () => {
   return (<>
     <Navbar />
     <Hero
-      bg="../assets/Resource/UPSC.svg"
+      bg={UpscPageBg}
       heading="UPSC"
       title="UPSC CSE Ultimate Guide"
     ></Hero>

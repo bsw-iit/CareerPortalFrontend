@@ -2,6 +2,8 @@ import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import Timeline from "../../components/timeline.tsx";
 import Videogrid from "../../components/videogrid.tsx"
+import sdeHomeBg from "../../assets/explore/sde-home-bg.svg";
+
 export default function SDE(){
   const sdeData = {
   downwardLabels: [
@@ -17,7 +19,7 @@ export default function SDE(){
     return (
       <div>
         <Navbar />
-        <Hero bg="../assets/explore/sde-home-bg.svg" heading="SDE" title="Build your career right way!"/>
+        <Hero bg={sdeHomeBg} heading="SDE" title="Build your career right way!"/>
         <Timeline data={sdeData}/>
         <Videogrid iframeUrl1="https://www.youtube.com/embed/33XDA8LPPOA" iframeUrl2="https://www.youtube.com/embed/0dsln2ugHms" questions={["What programming language to use?", "How important is ML?", "When should one start CP?", "How to balance time between CP and LeetCode?", "What projects to write? How to prepare for interviews?", "How to present your codes during interviews?"]}
   timestamps={["4", "28", "84","150","240","298"]}/>

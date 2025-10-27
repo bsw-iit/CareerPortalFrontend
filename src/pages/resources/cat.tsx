@@ -11,6 +11,7 @@ import Syallabus from "../../components/CAT-page-component/syallabus.tsx";
 import VideoBlog from "../../components/CAT-page-component/videsblog.tsx";
 import QuickDoDont from "../../components/CAT-page-component/dodonts.tsx";
 import SeniorAdvice from "../../components/CAT-page-component/senioradvice.tsx";
+import CatBg from "../../assets/Resource/CAT.svg";
 import {
   VARC,
   DILR,
@@ -41,7 +42,7 @@ export default function CatPage() {
     <div>
       <Navbar />
       <Hero
-        bg="../assets/Resource/CAT.svg"
+        bg={CatBg}
         heading="CAT"
         title="Build your career right way!"
       ></Hero>

@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import Timeline from "../../components/timeline.tsx";
 import VideoGrid from "../../components/videogrid.tsx";
+import bg from "../../assets/explore/quant-home-bg.svg";
 
 export default function Quant(){
   const quantData = {
@@ -19,7 +20,7 @@ export default function Quant(){
     return (
       <div>
         <Navbar />
-        <Hero bg="../assets/explore/quant-home-bg.svg" heading="QUANT" title="Build your career right way!"/>
+        <Hero bg={bg} heading="QUANT" title="Build your career right way!"/>
         <Timeline data={quantData} />
         <VideoGrid iframeUrl1="https://www.youtube.com/embed/lOMgNxnu2Ig" iframeUrl2="https://www.youtube.com/embed/4HDJX0zuycs" questions={["What companies come for internships? ", "What is the branch wise scope? ", "When to start preparing?", "Is Finance or ML knowledge required?", "What is the application procedure?  ", "What are the basic requirements !! for the role?"," ","What are the test procedures? !! How to prepare for them? ","What is the minimum CP Rating !! & Mental Maths Knowledge required?","How important are internships !! or projects?"]}
   timestamps={["2",  "19",  "42","62","82","118","23","151","242","365"]} />
