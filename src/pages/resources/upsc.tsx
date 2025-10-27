@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, BookOpen, Clock, Users, CalendarDays, Zap } from 'lucide-react';
-
+import Navbar from '../../components/Navbar';
+import Hero from '../../components/Hero';
 // --- Data Structure (Derived from User Input) ---
 
 const initialData = {
@@ -86,7 +87,7 @@ const initialData = {
 
 // --- Custom Components ---
 
-const AccordionItem = ({ title, content, defaultOpen = false, icon: Icon }) => {
+const AccordionItem = ({ title, content, defaultOpen = false, icon: Icon }: any) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -110,42 +111,69 @@ const AccordionItem = ({ title, content, defaultOpen = false, icon: Icon }) => {
   );
 };
 
-const TableComponent = ({ headers, data, caption }) => (
+const TableComponent = ({ headers, data, caption }: any) => (
   <div className="overflow-x-auto my-4 shadow-lg rounded-lg border border-gray-100">
     <table className="min-w-full divide-y divide-gray-200">
-      <caption className="py-2 px-4 text-lg font-medium text-indigo-800 bg-indigo-50 border-b border-indigo-200 rounded-t-lg">{caption}</caption>
+      <caption className="py-2 px-4 text-lg font-medium text-indigo-800 bg-indigo-50 border-b border-indigo-200 rounded-t-lg">
+        {caption}
+      </caption>
       <thead className="bg-indigo-600 text-white">
         <tr>
-          {headers.map((header, index) => (
-            <th key={index} scope="col" className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
+          {headers.map((header: string, index: number) => (
+            <th
+              key={index}
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider"
+            >
               {header}
             </th>
           ))}
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex} className="hover:bg-gray-50 transition duration-100">
-            {Object.values(row).map((cell, cellIndex) => (
-              <td key={cellIndex} className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 font-medium">
-                {cellIndex === 1 ? <span className="font-semibold text-indigo-700">{cell}</span> : cell}
+        {data.map((row: Record<string, string | number>, rowIndex: number) => (
+          <tr
+            key={rowIndex}
+            className="hover:bg-gray-50 transition duration-100"
+          >
+            {Object.values(row).map((cell: string | number, cellIndex: number) => (
+              <td
+                key={cellIndex}
+                className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 font-medium"
+              >
+                {cellIndex === 1 ? (
+                  <span className="font-semibold text-indigo-700">
+                    {cell}
+                  </span>
+                ) : (
+                  cell
+                )}
               </td>
             ))}
           </tr>
         ))}
       </tbody>
+
     </table>
   </div>
 );
 
-const MaterialList = ({ items }) => (
+
+const MaterialList = ({ items }: any) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
-    {items.map((item, index) => (
-      <div key={index} className="bg-white p-5 border-l-4 border-indigo-500 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
+    {items.map((item: { title: string; books: string[] }, index: number) => (
+      <div
+        key={index}
+        className="bg-white p-5 border-l-4 border-indigo-500 rounded-lg shadow-md transition duration-300 hover:shadow-xl"
+      >
         <h4 className="text-xl font-bold mb-2 text-indigo-800">{item.title}</h4>
         <ul className="space-y-2 text-gray-700 list-disc pl-5">
-          {item.books.map((book, bIndex) => (
-            <li key={bIndex} className="text-sm" dangerouslySetInnerHTML={{ __html: book }}></li>
+          {item.books.map((book: string, bIndex: number) => (
+            <li
+              key={bIndex}
+              className="text-sm"
+              dangerouslySetInnerHTML={{ __html: book }}
+            ></li>
           ))}
         </ul>
       </div>
@@ -254,10 +282,10 @@ const MainsTab = () => (
       defaultOpen={true}
       content={
         <div className="space-y-4">
-           <div className="bg-white p-5 rounded-lg shadow-md border border-gray-200">
-              <h4 className="text-xl font-bold mb-3 text-indigo-700">Paper I – Essay (250 Marks)</h4>
-              <p className="text-gray-600">Candidates write 2 essays (125 marks each) on topics ranging from abstract, philosophical to socio-political themes.</p>
-            </div>
+          <div className="bg-white p-5 rounded-lg shadow-md border border-gray-200">
+            <h4 className="text-xl font-bold mb-3 text-indigo-700">Paper I – Essay (250 Marks)</h4>
+            <p className="text-gray-600">Candidates write 2 essays (125 marks each) on topics ranging from abstract, philosophical to socio-political themes.</p>
+          </div>
           {initialData.mains.gsSyllabus.map((section, index) => (
             <div key={index} className="bg-white p-5 rounded-lg shadow-md border border-gray-200">
               <h4 className="text-xl font-bold mb-3 text-indigo-700">{section.title}</h4>
@@ -268,10 +296,10 @@ const MainsTab = () => (
               </ul>
             </div>
           ))}
-           <div className="bg-white p-5 rounded-lg shadow-md border border-gray-200">
-              <h4 className="text-xl font-bold mb-3 text-indigo-700">Optional Subject (Paper VI & VII)</h4>
-              <p className="text-gray-600">Two papers (250 marks each) are taken on ONE optional subject chosen by the candidate from the list provided by UPSC.</p>
-            </div>
+          <div className="bg-white p-5 rounded-lg shadow-md border border-gray-200">
+            <h4 className="text-xl font-bold mb-3 text-indigo-700">Optional Subject (Paper VI & VII)</h4>
+            <p className="text-gray-600">Two papers (250 marks each) are taken on ONE optional subject chosen by the candidate from the list provided by UPSC.</p>
+          </div>
         </div>
       }
     />
@@ -341,50 +369,59 @@ const App = () => {
 
   const ActiveComponent = tabs.find(t => t.name === activeTab)?.component || OverviewTab;
 
-  return (
-    <div className="min-h-screen bg-gray-100 font-sans">
-      <header className="bg-indigo-700 text-white shadow-lg p-6">
-        <h1 className="text-4xl font-extrabold text-center tracking-tight">
+  return (<>
+    <Navbar />
+    <Hero
+      bg="../assets/Resource/UPSC.svg"
+      heading="UPSC"
+      title="UPSC CSE Ultimate Guide"
+    ></Hero>
+    <div>
+      <div className="min-h-screen bg-gray-100 font-sans">
+        <header className="bg-indigo-700 text-white shadow-lg p-6">
+          {/* <h1 className="text-4xl font-extrabold text-center tracking-tight">
           UPSC CSE Ultimate Guide
-        </h1>
-        <p className="text-center text-indigo-200 mt-2 text-lg">
-          Complete Structure, Syllabus, Materials, and 1-Year Plan
-        </p>
-      </header>
+        </h1> */}
+          <p className="text-center text-indigo-200 mt-2 text-lg">
+            Complete Structure, Syllabus, Materials, and 1-Year Plan
+          </p>
+        </header>
 
-      <div className="max-w-7xl mx-auto py-8">
-        {/* Tab Navigation */}
-        <div className="bg-white p-4 rounded-xl shadow-xl sticky top-0 z-10 border-b border-gray-200">
-          <nav className="flex space-x-1 sm:space-x-4 justify-around" aria-label="Tabs">
-            {tabs.map((tab) => (
-              <button
-                key={tab.name}
-                onClick={() => setActiveTab(tab.name)}
-                className={`
+        <div className="max-w-7xl mx-auto py-8">
+          {/* Tab Navigation */}
+          <div className="bg-white p-4 rounded-xl shadow-xl sticky top-0 z-10 border-b border-gray-200">
+            <nav className="flex space-x-1 sm:space-x-4 justify-around" aria-label="Tabs">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.name}
+                  onClick={() => setActiveTab(tab.name)}
+                  className={`
                   ${activeTab === tab.name
-                    ? 'bg-indigo-600 text-white shadow-lg'
-                    : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-700'
-                  }
+                      ? 'bg-indigo-600 text-white shadow-lg'
+                      : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-700'
+                    }
                   flex items-center justify-center px-3 py-2 sm:px-4 sm:py-3 font-medium text-sm sm:text-lg rounded-xl transition duration-300 ease-in-out w-full sm:w-auto
                 `}
-              >
-                <tab.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {tab.name}
-              </button>
-            ))}
-          </nav>
+                >
+                  <tab.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  {tab.name}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          {/* Tab Content */}
+          <main className="mt-8 bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+            <ActiveComponent />
+          </main>
         </div>
 
-        {/* Tab Content */}
-        <main className="mt-8 bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-          <ActiveComponent />
-        </main>
+        <footer className="py-4 text-center text-sm text-gray-500">
+          UPSC Guide generated from provided content data. All rights reserved.
+        </footer>
       </div>
-
-      <footer className="py-4 text-center text-sm text-gray-500">
-        UPSC Guide generated from provided content data. All rights reserved.
-      </footer>
     </div>
+  </>
   );
 };
 
