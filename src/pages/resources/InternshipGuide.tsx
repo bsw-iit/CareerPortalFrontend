@@ -7,7 +7,9 @@ import {
   FiDownload, 
   FiCpu, 
   FiCode, 
-  FiBriefcase 
+  FiBriefcase,
+  FiEye,
+  FiX
 } from 'react-icons/fi';
 import Navbar from '../../components/Navbar';
 
@@ -204,6 +206,7 @@ const CompanyInsightsTab: React.FC = () => (
 // --- Main Page Component ---
 const InternshipGuide: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('Prep Resources');
+  const [showPreview, setShowPreview] = useState<boolean>(false); // State for PDF Modal
 
   const tabs: Tab[] = [
     { name: 'Prep Resources', component: PrepResourcesTab, icon: FiBookOpen },
@@ -225,7 +228,7 @@ const InternshipGuide: React.FC = () => {
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-2/3 z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#164360] text-[#8abce0] text-sm font-semibold mb-6 tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#164360] text-[#8abce0] text-sm font-semibold mb-6 tracking-wide uppercase border border-[#164360]">
               <FiBriefcase className="w-4 h-4" />
               <span>BSW Initiative</span>
             </div>
@@ -235,14 +238,29 @@ const InternshipGuide: React.FC = () => {
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
               The ultimate distillation of preparation strategies, company pipelines, and role-specific insights curated from the IITD BSW Bluebook.
             </p>
-            <a 
-              href="/path-to-your-bsw-bluebook.pdf" 
-              download="Bluebook_BSW_IITD.pdf"
-              className="inline-flex items-center justify-center gap-3 bg-[#65a3d4] hover:bg-[#528ebf] text-[#0d2a3d] px-8 py-3.5 rounded-lg font-bold text-lg shadow-lg shadow-[#65a3d4]/20 transition-all duration-200 transform hover:-translate-y-0.5"
-            >
-              <FiDownload className="w-5 h-5" />
-              Download Bluebook PDF
-            </a>
+            
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button 
+                onClick={() => setShowPreview(true)}
+                className="inline-flex items-center justify-center gap-2 bg-[#65a3d4] hover:bg-[#528ebf] text-[#0d2a3d] px-8 py-3.5 rounded-lg font-bold text-lg shadow-lg shadow-[#65a3d4]/20 transition-all duration-200 transform hover:-translate-y-0.5"
+              >
+                <FiEye className="w-5 h-5" />
+                Preview Bluebook
+              </button>
+              
+              <a 
+                href="https://bswcareerportal.iitd.ac.in/static/Bluebook_BSW_IITD.pdf" 
+                download="Bluebook_BSW_IITD.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#65a3d4] hover:bg-[#65a3d4]/10 text-[#8abce0] px-8 py-3.5 rounded-lg font-bold text-lg transition-all duration-200"
+              >
+                <FiDownload className="w-5 h-5" />
+                Download
+              </a>
+            </div>
+
           </div>
           
           {/* Decorative Graphic for right side */}
@@ -286,6 +304,41 @@ const InternshipGuide: React.FC = () => {
         </main>
         
       </div>
+
+      {/* --- PDF Preview Modal --- */}
+      {showPreview && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0d2a3d]/80 backdrop-blur-sm p-4 sm:p-6 animate-fadeIn">
+          <div className="relative w-full max-w-6xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+            
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+              <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <FiBookOpen className="text-[#65a3d4]" />
+                Bluebook Preview
+              </h3>
+              <button
+                onClick={() => setShowPreview(false)}
+                className="p-2 text-slate-500 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors focus:outline-none"
+                aria-label="Close Preview"
+              >
+                <FiX className="w-6 h-6" />
+              </button>
+            </div>
+            
+            {/* Modal Body / PDF Iframe */}
+            <div className="flex-1 w-full bg-slate-200">
+              {/* Note: #view=FitH ensures the PDF loads zoomed to the page width automatically */}
+              <iframe 
+                src="https://bswcareerportal.iitd.ac.in/static/Bluebook_BSW_IITD.pdf#view=FitH" 
+                className="w-full h-full border-none"
+                title="Bluebook PDF"
+              />
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

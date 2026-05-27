@@ -8,7 +8,9 @@ import {
   FiShield, 
   FiDownload, 
   FiSend,
-  FiBriefcase
+  FiBriefcase,
+  FiEye,
+  FiX
 } from 'react-icons/fi';
 import Navbar from '../../components/Navbar';
 
@@ -233,6 +235,7 @@ const ResourcesTab: React.FC = () => (
 // --- Main Page Component ---
 const StartupGuide: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('Ideation');
+  const [showPreview, setShowPreview] = useState<boolean>(false); // State for PDF Modal
 
   const tabs: Tab[] = [
     { name: 'Ideation', component: IdeationTab, icon: FiZap },
@@ -265,14 +268,29 @@ const StartupGuide: React.FC = () => {
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
               From problem discovery to scale-up: The complete founder's journey curated directly from the IITD Startup Playbook.
             </p>
-            <a 
-              href="/path-to-your-startup-playbook.pdf" 
-              download="IITD_Startup_Playbook.pdf"
-              className="inline-flex items-center justify-center gap-3 bg-[#14b8a6] hover:bg-[#0d9488] text-white px-8 py-3.5 rounded-lg font-bold text-lg shadow-lg shadow-[#14b8a6]/20 transition-all duration-200 transform hover:-translate-y-0.5"
-            >
-              <FiDownload className="w-5 h-5" />
-              Download Playbook PDF
-            </a>
+            
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button 
+                onClick={() => setShowPreview(true)}
+                className="inline-flex items-center justify-center gap-2 bg-[#14b8a6] hover:bg-[#0d9488] text-white px-8 py-3.5 rounded-lg font-bold text-lg shadow-lg shadow-[#14b8a6]/20 transition-all duration-200 transform hover:-translate-y-0.5"
+              >
+                <FiEye className="w-5 h-5" />
+                Preview Playbook
+              </button>
+              
+              <a 
+                href="https://bswcareerportal.iitd.ac.in/static/Startup_Playbook.pdf" 
+                download="IITD_Startup_Playbook.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#14b8a6] hover:bg-[#14b8a6]/10 text-[#5eead4] px-8 py-3.5 rounded-lg font-bold text-lg transition-all duration-200"
+              >
+                <FiDownload className="w-5 h-5" />
+                Download
+              </a>
+            </div>
+
           </div>
           
           {/* Decorative Graphic for right side */}
@@ -316,6 +334,41 @@ const StartupGuide: React.FC = () => {
         </main>
         
       </div>
+
+      {/* --- PDF Preview Modal --- */}
+      {showPreview && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0d2a3d]/80 backdrop-blur-sm p-4 sm:p-6 animate-fadeIn">
+          <div className="relative w-full max-w-6xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+            
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+              <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <FiBookOpen className="text-[#14b8a6]" />
+                Startup Playbook Preview
+              </h3>
+              <button
+                onClick={() => setShowPreview(false)}
+                className="p-2 text-slate-500 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors focus:outline-none"
+                aria-label="Close Preview"
+              >
+                <FiX className="w-6 h-6" />
+              </button>
+            </div>
+            
+            {/* Modal Body / PDF Iframe */}
+            <div className="flex-1 w-full bg-slate-200">
+              {/* Note: #view=FitH ensures the PDF loads zoomed to the page width automatically */}
+              <iframe 
+                src="https://bswcareerportal.iitd.ac.in/static/Startup_Playbook.pdf#view=FitH" 
+                className="w-full h-full border-none"
+                title="Startup Playbook PDF"
+              />
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
