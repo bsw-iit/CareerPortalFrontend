@@ -267,6 +267,22 @@ export default function Navbar() {
                       Summer Guide
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/Resource/startup_guide"
+                      className="block py-2 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Startup Playbook
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/Resource/internship_guide"
+                      className="block py-2 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      BSW Bluebook
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -424,6 +440,20 @@ export default function Navbar() {
                   onClick={closeMenu}
                 >
                   Higher Studies
+                </Link>
+                <Link
+                  to="/Resource/startup_guide"
+                  className="py-2 hover:bg-[#e2e2e2]"
+                  onClick={closeMenu}
+                >
+                   Startup Guide
+                </Link>
+                <Link
+                  to="/Resource/internship_guide"
+                  className="py-2 hover:bg-[#e2e2e2]"
+                  onClick={closeMenu}
+                >
+                    Internship Guide
                 </Link>
               </div>
             )}

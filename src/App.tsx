@@ -25,6 +25,9 @@ import SDE from "./pages/build/SDE";
 import Quant from "./pages/build/quant";
 import Consult from "./pages/build/consult.tsx";
 import CoreExplore from "./pages/explore/coreExplore.tsx";
+import InternshipGuide from "./pages/resources/InternshipGuide.tsx";
+import StartupGuide from "./pages/resources/StartupGuide.tsx";
+
 
 
 
@@ -57,6 +60,8 @@ export default function App() {
         <Route path="/Resource/CAT" element={<Cat />} />
         <Route path="/Resource/Higher_Studies" element={<HigherStudies />} />
         <Route path="/Resource/summer_guide" element={<SummerGuide />} />
+        <Route path="/Resource/internship_guide" element={<InternshipGuide/>} />
+        <Route path="/Resource/startup_guide" element={<StartupGuide/>} />
                
         {/* <Route path="/explore/:profileName" element={<ExplorePage />} /> */}
         {/* <Route path="/build/:profileName" element={<BuildPage />} /> */}
