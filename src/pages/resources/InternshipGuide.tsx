@@ -8,8 +8,7 @@ import {
   FiCpu, 
   FiCode, 
   FiBriefcase,
-  FiEye,
-  FiX
+  FiEye
 } from 'react-icons/fi';
 import Navbar from '../../components/Navbar';
 
@@ -206,7 +205,6 @@ const CompanyInsightsTab: React.FC = () => (
 // --- Main Page Component ---
 const InternshipGuide: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('Prep Resources');
-  const [showPreview, setShowPreview] = useState<boolean>(false); // State for PDF Modal
 
   const tabs: Tab[] = [
     { name: 'Prep Resources', component: PrepResourcesTab, icon: FiBookOpen },
@@ -241,13 +239,15 @@ const InternshipGuide: React.FC = () => {
             
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4">
-              <button 
-                onClick={() => setShowPreview(true)}
+              <a 
+                href="https://bswcareerportal.iitd.ac.in/static/Bluebook_BSW_IITD.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#65a3d4] hover:bg-[#528ebf] text-[#0d2a3d] px-8 py-3.5 rounded-lg font-bold text-lg shadow-lg shadow-[#65a3d4]/20 transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 <FiEye className="w-5 h-5" />
                 Preview Bluebook
-              </button>
+              </a>
               
               <a 
                 href="https://bswcareerportal.iitd.ac.in/static/Bluebook_BSW_IITD.pdf" 
@@ -304,41 +304,6 @@ const InternshipGuide: React.FC = () => {
         </main>
         
       </div>
-
-      {/* --- PDF Preview Modal --- */}
-      {showPreview && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0d2a3d]/80 backdrop-blur-sm p-4 sm:p-6 animate-fadeIn">
-          <div className="relative w-full max-w-6xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
-            
-            {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
-              <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-                <FiBookOpen className="text-[#65a3d4]" />
-                Bluebook Preview
-              </h3>
-              <button
-                onClick={() => setShowPreview(false)}
-                className="p-2 text-slate-500 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors focus:outline-none"
-                aria-label="Close Preview"
-              >
-                <FiX className="w-6 h-6" />
-              </button>
-            </div>
-            
-            {/* Modal Body / PDF Iframe */}
-            <div className="flex-1 w-full bg-slate-200">
-              {/* Note: #view=FitH ensures the PDF loads zoomed to the page width automatically */}
-              <iframe 
-                src="https://bswcareerportal.iitd.ac.in/static/Bluebook_BSW_IITD.pdf#view=FitH" 
-                className="w-full h-full border-none"
-                title="Bluebook PDF"
-              />
-            </div>
-
-          </div>
-        </div>
-      )}
-
     </div>
   );
 };
