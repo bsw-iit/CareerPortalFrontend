@@ -39,8 +39,8 @@ const startupData = {
     title: "Ecosystem Philosophy",
     content: [
       "At IIT Delhi, entrepreneurship is approached not as an end goal of company creation, but as a long-term capability developed through sustained exposure, structured experimentation, and mentorship.",
-      "**The Student's Journey:** Awareness & Ideation → Validation & Pre-Incubation → MVP Development → Pitching & Incubation → Scale-Up.",
-      "**The Founder's Journey:** Problem Discovery → Solution Design → Product Development → Market Entry + Fundraising → Growth & Scale."
+      "<strong>The Student's Journey:</strong> Awareness & Ideation → Validation & Pre-Incubation → MVP Development → Pitching & Incubation → Scale-Up.",
+      "<strong>The Founder's Journey:</strong> Problem Discovery → Solution Design → Product Development → Market Entry + Fundraising → Growth & Scale."
     ]
   },
   ideation: {
@@ -73,10 +73,10 @@ const startupData = {
       { type: "Venture Capital", focus: "For startups ready to scale rapidly post product-market fit. Comes with high growth expectations." }
     ],
     legal: [
-      "**Intellectual Property (IP):** Protect ideas, technology, and branding.",
-      "**Incorporation:** Required for fundraising, signing contracts, and hiring.",
-      "**Founder Agreements:** Clear equity splits, roles, decision-making, and exit clauses.",
-      "**Compliance:** Taxes, company law, employment, and data regulations."
+      "<strong>Intellectual Property (IP):</strong> Protect ideas, technology, and branding.",
+      "<strong>Incorporation:</strong> Required for fundraising, signing contracts, and hiring.",
+      "<strong>Founder Agreements:</strong> Clear equity splits, roles, decision-making, and exit clauses.",
+      "<strong>Compliance:</strong> Taxes, company law, employment, and data regulations."
     ]
   },
   resources: {
@@ -152,7 +152,7 @@ const IdeationTab: React.FC = () => (
       </h4>
       <ul className="list-disc list-inside space-y-3 text-slate-600 marker:text-[#14b8a6]">
         {startupData.ideation.problems.map((item, index) => (
-          <li key={index} className="leading-relaxed">{item}</li>
+          <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: item }}></li>
         ))}
       </ul>
     </div>
@@ -163,7 +163,7 @@ const IdeationTab: React.FC = () => (
         defaultOpen={true}
         content={
           <ul className="list-disc list-inside space-y-3 mt-2 text-slate-600 marker:text-[#14b8a6]">
-            {startupData.ideation.founderQualities.map((item, index) => <li key={index}>{item}</li>)}
+            {startupData.ideation.founderQualities.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>)}
           </ul>
         }
       />
@@ -223,7 +223,7 @@ const ResourcesTab: React.FC = () => (
             <h4 className="text-lg font-bold text-slate-800 leading-tight">{facility.title}</h4>
           </div>
           <ul className="space-y-2 text-slate-600 list-disc pl-5 marker:text-[#14b8a6]">
-            {facility.points.map((point, pIndex) => <li key={pIndex} className="text-sm leading-relaxed">{point}</li>)}
+            {facility.points.map((point, pIndex) => <li key={pIndex} className="text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: point }}></li>)}
           </ul>
         </div>
       ))}

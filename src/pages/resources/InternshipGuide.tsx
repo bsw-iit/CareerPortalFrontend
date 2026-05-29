@@ -36,21 +36,21 @@ interface Tab {
 const internshipData = {
   prepResources: {
     quant: [
-      "**Puzzles:** Brainstellar, 50 Challenging Problems in Probability (F. Mosteller), The Green Book (Xinfeng Zhou).",
-      "**Coding/DSA:** Codeforces, CSES Problem Set, LeetCode Hard.",
-      "**Platform:** QuantGuide.io, PuzzledQuant.",
-      "**Concepts:** Core Probability, Statistics (MTL106 level), C++ OOPS & Systems."
+      "<strong>Puzzles:</strong> Brainstellar, 50 Challenging Problems in Probability (F. Mosteller), The Green Book (Xinfeng Zhou).",
+      "<strong>Coding/DSA:</strong> Codeforces, CSES Problem Set, LeetCode Hard.",
+      "<strong>Platform:</strong> QuantGuide.io, PuzzledQuant.",
+      "<strong>Concepts:</strong> Core Probability, Statistics (MTL106 level), C++ OOPS & Systems."
     ],
     tech: [
-      "**DSA Mastery:** Striver's A2Z DSA Sheet, LeetCode (150/Blind 75).",
-      "**Fundamentals:** CSES Problem Set (Graphs, DP, Trees).",
-      "**Core CS:** GeeksForGeeks (OS, DBMS, Computer Networks, OOPS).",
-      "**Practical Skills:** DevClub IITD GitHub Repositories (Intern-Prep Series)."
+      "<strong>DSA Mastery:</strong> Striver's A2Z DSA Sheet, LeetCode (150/Blind 75).",
+      "<strong>Fundamentals:</strong> CSES Problem Set (Graphs, DP, Trees).",
+      "<strong>Core CS:</strong> GeeksForGeeks (OS, DBMS, Computer Networks, OOPS).",
+      "<strong>Practical Skills:</strong> DevClub IITD GitHub Repositories (Intern-Prep Series)."
     ],
     consulting: [
-      "**Case Prep:** Case Interviews Cracked (YouTube & Book), SRCC Case Compendium, IIM-A/B Casebooks.",
-      "**Guesstimates:** Focus on structured breakdown and mental math speed.",
-      "**Business Awareness:** Company financial reports, Business Insider, general fintech/startup knowledge."
+      "<strong>Case Prep:</strong> Case Interviews Cracked (YouTube & Book), SRCC Case Compendium, IIM-A/B Casebooks.",
+      "<strong>Guesstimates:</strong> Focus on structured breakdown and mental math speed.",
+      "<strong>Business Awareness:</strong> Company financial reports, Business Insider, general fintech/startup knowledge."
     ]
   },
   selectionProcess: [
