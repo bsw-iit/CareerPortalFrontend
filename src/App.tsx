@@ -27,6 +27,7 @@ import Consult from "./pages/build/consult.tsx";
 import CoreExplore from "./pages/explore/coreExplore.tsx";
 import InternshipGuide from "./pages/resources/InternshipGuide.tsx";
 import StartupGuide from "./pages/resources/StartupGuide.tsx";
+import QuantGuide from "./pages/resources/QuantGuide.tsx";
 
 
 
@@ -62,6 +63,7 @@ export default function App() {
         <Route path="/Resource/summer_guide" element={<SummerGuide />} />
         <Route path="/Resource/internship_guide" element={<InternshipGuide/>} />
         <Route path="/Resource/startup_guide" element={<StartupGuide/>} />
+        <Route path="/Resource/quant_guide" element={<QuantGuide/>} />
                
         {/* <Route path="/explore/:profileName" element={<ExplorePage />} /> */}
         {/* <Route path="/build/:profileName" element={<BuildPage />} /> */}

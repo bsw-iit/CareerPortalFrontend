@@ -283,6 +283,14 @@ export default function Navbar() {
                       BSW Bluebook
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/Resource/quant_guide"
+                      className="block py-2 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Quant Guide
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -454,6 +462,13 @@ export default function Navbar() {
                   onClick={closeMenu}
                 >
                     Internship Guide
+                </Link>
+                <Link
+                  to="/Resource/quant_guide"
+                  className="py-2 hover:bg-[#e2e2e2]"
+                  onClick={closeMenu}
+                >
+                    Quant Guide
                 </Link>
               </div>
             )}
