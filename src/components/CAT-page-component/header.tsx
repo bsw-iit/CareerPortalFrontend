@@ -1,5 +1,5 @@
 import React from "react";
-import { Youtube, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 const HeaderBar: React.FC = () => {
   return (
@@ -15,18 +15,6 @@ const HeaderBar: React.FC = () => {
 
       {/* Right side buttons */}
       <div className="flex gap-3 flex-wrap justify-end max-w-full">
-        <button className="flex items-center gap-2 bg-blue-600 text-white rounded-full text-sm md:text-base font-medium cursor-pointer 
-                           px-2 py-1 md:px-4 md:py-1.5" onClick={() => window.open('https://www.youtube.com/playlist?list=PL7nV1v4x5fX1H3jv5c1K5kzF2yZzO9b8y', '_blank')}>
-          <Youtube className="h-3 w-3 md:h-4 md:w-4" />
-          <span className="whitespace-nowrap">Everything about CAT</span>
-        </button>
-
-        <button className="flex items-center gap-2 bg-gray-200 text-gray-700 rounded-full text-sm md:text-base font-medium cursor-pointer 
-                           px-2 py-1 md:px-4 md:py-1.5" onClick={() => window.open('https://www.youtube.com/playlist?list=PL7nV1v4x5fX3jv5c1K5kzF2yZzO9b8y', '_blank')}>
-          <Youtube className="h-3 w-3 md:h-4 md:w-4" />
-          <span className="whitespace-nowrap">IIM-A Criteria (Video)</span>
-        </button>
-
         <button className="flex items-center gap-2 border border-blue-600 text-blue-600 rounded-full text-sm md:text-base font-medium cursor-pointer 
                            px-2 py-1 md:px-4 md:py-1.5">
           <BookOpen className="h-3 w-3 md:h-4 md:w-4" />

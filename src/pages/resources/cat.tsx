@@ -16,7 +16,6 @@ import {
   VARC,
   DILR,
   QA,
-  youtubeLinks,
   blogLinks,
   adviceList,
   doList,
@@ -33,7 +32,7 @@ export default function CatPage() {
     { id: "mocks", label: "Mocks & Planning" },
     { id: "iima", label: "IIM‑A Criteria" },
     { id: "syallabus", label: "Syllabus" },
-    { id: "videos", label: "Videos & Blogs" },
+    { id: "blogs", label: "Blogs" },
     { id: "seniors", label: "Seniors’ Advice" },
     { id: "quick", label: "Quick Do/Don’t" },
   ];
@@ -96,8 +95,8 @@ export default function CatPage() {
         <div id="syallabus" className="w-full h-full px-8 pb-4">
           <Syallabus />
         </div>
-        <div id="videos" className="w-full h-full px-8 pb-4">
-          <VideoBlog youtubeLinks={youtubeLinks} blogLinks={blogLinks} />
+        <div id="blogs" className="w-full h-full px-8 pb-4">
+          <VideoBlog blogLinks={blogLinks} />
         </div>
 
         <div id="seniors" className="w-full h-full px-8 pb-4">
