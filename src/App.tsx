@@ -13,38 +13,6 @@ import {
   supportsNativePageTransitions,
   type ViewTransitionDocument,
 } from "./utils/pageTransitions";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from './components/ScrollToTop';
-import Landing from "./pages/Landing";
-// import ExplorePage from "./pages/Explore";
-// import BuildPage from "./pages/BUILD"; 
-// import ResourcePage from "./pages/Resource"; 
-import NotFound from "./pages/NotFound";
-import Footer from './components/Footer';
-
-import HigherStudies from "./pages/resources/HigherStudies.tsx"; 
-import SummerGuide from "./pages/resources/SummerGuide.tsx";
-import Cat from "./pages/resources/cat.tsx";
-import Upsc from "./pages/resources/upsc.tsx";
-
-import Aiml from "./pages/explore/aiml.tsx";
-import ConsultExplore from "./pages/explore/consultExplore.tsx"
-import QuantExplore from "./pages/explore/quantExplore.tsx";
-
-import SDEExplore from "./pages/explore/SDEexplore.tsx";
-import AnalyticsExplore from "./pages/explore/AnalyticsExplore";
-
-import CoreBuild from "./pages/build/CoreBuild";
-import AnalyticsBuild from "./pages/build/AnalyticsBuild";
-import SDE from "./pages/build/SDE";
-import Quant from "./pages/build/quant";
-import Consult from "./pages/build/consult.tsx";
-import CoreExplore from "./pages/explore/coreExplore.tsx";
-import InternshipGuide from "./pages/resources/InternshipGuide.tsx";
-import StartupGuide from "./pages/resources/StartupGuide.tsx";
-import QuantGuide from "./pages/resources/QuantGuide.tsx";
-
-
 
 
 export default function App() {
