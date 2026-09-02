@@ -190,47 +190,7 @@ export default function App() {
         />
       )}
     </main>
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        {/* Default Landing Page */}
-        <Route path="/" element={<Landing />} />
 
-        {/* Dynamic Explore Pages */}
-        <Route path="/explore/sde" element={<SDEExplore />} />
-        <Route path="/explore/quant" element={<QuantExplore />} />
-        <Route path="/explore/core" element={<CoreExplore />} />
-        <Route path="/explore/finance" element={<AnalyticsExplore />} />
-        <Route path="/explore/ai-ml" element={<Aiml />} />       
-        <Route path="/explore/consult" element={<ConsultExplore />} />
-
-
-        {/* Dynamic Build Page */}
-        <Route path="/BUILD/sde" element={<SDE />} />
-        <Route path="/BUILD/quant" element={<Quant />} />
-        <Route path="/BUILD/core" element={<CoreBuild />} />
-        <Route path="/BUILD/finance" element={<AnalyticsBuild />} />
-        <Route path="/BUILD/consult" element={<Consult />} />
-        
-        {/* Dynamic Resource page */}
-        <Route path="/Resource/UPSC" element={<Upsc />} />
-        <Route path="/Resource/CAT" element={<Cat />} />
-        <Route path="/Resource/Higher_Studies" element={<HigherStudies />} />
-        <Route path="/Resource/summer_guide" element={<SummerGuide />} />
-        <Route path="/Resource/internship_guide" element={<InternshipGuide/>} />
-        <Route path="/Resource/startup_guide" element={<StartupGuide/>} />
-        <Route path="/Resource/quant_guide" element={<QuantGuide/>} />
-               
-        {/* <Route path="/explore/:profileName" element={<ExplorePage />} /> */}
-        {/* <Route path="/build/:profileName" element={<BuildPage />} /> */}
-        {/* <Route path="/Resource/:profileName" element={<ResourcePage />} /> */}
-
-        {/* ALL OTHER CATCH */}
-        <Route path="*" element={<NotFound/>}/>
-        
-      </Routes>
-      <Footer/>
-    </Router>
     </>
   );
 }
