@@ -106,16 +106,6 @@ export const QA = {
   ],
 };
 
-export const youtubeLinks = [
-  {
-    text: "Everything about the Common Admission Test",
-    url: "https://youtu.be/8jx3VjU_oxM?si=eStqT4ywx9hyBBLT",
-  },
-  {
-    text: "Indian Institute of Management Ahmedabad Selection Criteria — Video explainer",
-    url: "https://youtu.be/n7qB7mjIdK4?si=4Pip3id5WaiAZviY",
-  },
-];
 export const blogLinks = [
   {
     text: "How to start Common Admission Test 2025 preparation — InsideIIM",
