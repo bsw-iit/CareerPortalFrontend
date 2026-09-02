@@ -267,7 +267,7 @@ const QuantGuide: React.FC = () => {
     { name: 'Resources', component: ResourcesTab, icon: FiBookOpen },
     { name: 'Tech Stack', component: TechStackTab, icon: FiCpu },
     { name: 'Strategy', component: StrategyTab, icon: FiTarget },
-    { name: 'Programs', component: ProgramsTab, icon: FiBriefcase },
+    { name: 'Programs', component: FiBarChart2, icon: FiBriefcase },
   ];
 
   const ActiveComponent = tabs.find(t => t.name === activeTab)?.component || ResourcesTab;
